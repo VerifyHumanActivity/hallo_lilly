@@ -35,11 +35,9 @@ body {
 
 /* 🔘 BUTTON CONTAINER */
 .buttons {
-  display: flex;
-  justify-content: center;   /* Mitte der beiden */
-  gap: 40px;                 /* Abstand zwischen JA / NEIN */
-  margin-top: 30px;
   position: relative;
+  margin-top: 30px;
+  height: 90px; /* Platz für beide Buttons */
 }
 
 #yesBtn {
@@ -64,11 +62,11 @@ button {
 
 /* 💖 JA */
 #yesBtn {
+  position: absolute;
+  left: 0;                /* Start links */
   background-color: #ff7aa2;
   color: white;
   animation: pulse 1.8s infinite;
-  position: relative;
-  left: -80px; 
 }
 
 /* ✨ Hover Glow */
