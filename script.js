@@ -34,9 +34,10 @@ noBtn.addEventListener("touchstart", (e) => {
 /* 💖 JA klick */
 yesBtn.addEventListener("click", () => {
 
-  heartSound.currentTime = 0;
-  heartSound.play();
-
+  if (heartSound){
+    heartSound.play().catch(() => {});
+  }
+  
   questionContainer.style.opacity = 0;
 
   setTimeout(() => {
