@@ -1,3 +1,4 @@
+/* 🌸 Grundlayout */
 body {
   margin: 0;
   height: 100vh;
@@ -8,39 +9,102 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* Vorher */
+/* ❓ Frage-Bereich */
 #questionContainer {
-  position: relative;   /* 🔥 DAS fehlt */
+  position: relative;
   text-align: center;
 }
 
-#noBtn {
-  position: absolute;
-}
-
+/* 🖼️ GIF vorher */
 #questionGif {
-  width: 250px;
+  width: 140px;
   max-width: 80vw;
 }
 
+/* 📝 Frage */
 #questionText {
   margin-top: 20px;
-  font-size: 24px;
+  font-size: 26px;
 }
 
-/* Nachher */
+/* 🔘 Buttons allgemein */
+.buttons {
+  margin-top: 25px;
+}
+
+button {
+  padding: 16px 32px;
+  font-size: 20px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  min-width: 150px;
+  transition: all 0.25s ease;
+}
+
+/* 💖 JA Button */
+#yesBtn {
+  background-color: #ff7aa2;
+  color: white;
+  animation: pulse 1.8s infinite;
+}
+
+/* ✨ Hover Glow */
+#yesBtn:hover {
+  box-shadow: 0 0 18px rgba(255, 122, 162, 0.9);
+  transform: scale(1.08);
+}
+
+/* 😈 NEIN Button */
+#noBtn {
+  background-color: #ffd1dc;
+  position: absolute;
+}
+
+/* 😈 schrumpft beim Hover */
+#noBtn:hover {
+  transform: scale(0.75);
+}
+
+/* 💓 Puls-Animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* 🎉 Ergebnis-Bereich */
 #resultContainer {
   display: none;
   text-align: center;
 }
 
 #resultGif {
-  width: 300px;
-  max-width: 80vw;
+  width: 320px;
+  max-width: 90vw;
 }
 
 #resultText {
   margin-top: 20px;
-  font-size: 24px;
+  font-size: 28px;
 }
 
+/* 📱 Mobile Optimierung */
+@media (max-width: 600px) {
+  button {
+    padding: 20px 36px;
+    font-size: 22px;
+    min-width: 180px;
+  }
+
+  #questionText,
+  #resultText {
+    font-size: 24px;
+  }
+}
