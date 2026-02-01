@@ -64,6 +64,3 @@ yesBtn.addEventListener("click", () => {
     resultText.textContent = "💖 Ich wusste es! 💖";
   }, 600);
 });
-
-
-});
