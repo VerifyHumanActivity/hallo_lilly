@@ -34,17 +34,29 @@ noBtn.addEventListener("touchstart", (e) => {
 /* 💖 JA klick */
 yesBtn.addEventListener("click", () => {
 
-  if (heartSound){
-    heartSound.volume = 1;
-    heartSound.play().catch(err => {console.log("Audio blocked:", err); });
-  }
-  
+  // 🔊 SOUND STARTET HIER (ERLAUBT!)
+  heartSound.currentTime = 0;
+  heartSound.volume = 1;
+  heartSound.play();
+
+  // 🎀 sanfter Übergang
+  questionContainer.style.transition = "opacity 0.6s ease";
   questionContainer.style.opacity = 0;
 
   setTimeout(() => {
     questionContainer.style.display = "none";
-    resultText.textContent = "💖 Ich wusste es! 💖";
+
     resultContainer.style.display = "block";
-    resultContainer.style.opacity = 1;
+    resultContainer.style.opacity = 0;
+    resultContainer.style.transition = "opacity 0.6s ease";
+
+    requestAnimationFrame(() => {
+      resultContainer.style.opacity = 1;
+    });
+
+    resultText.textContent = "💖 Ich wusste es! 💖";
+
   }, 600);
+});
+
 });
