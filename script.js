@@ -31,28 +31,22 @@ noBtn.addEventListener("touchstart", (e) => {
   moveNoBtn();
 });
 
-const confirmBox = document.getElementById("confirmBox");
-const confirmYes = document.getElementById("confirmYes");
+let yesStep = 0;
 
-let confirmed = false;
-
-/* 💖 ERSTER KLICK AUF JA */
 yesBtn.addEventListener("click", () => {
-  if (confirmed) return;
+  yesStep++;
 
-  confirmBox.style.display = "block";
-});
+  // 1️⃣ ERSTER KLICK
+  if (yesStep === 1) {
+    yesBtn.textContent = "Bist du ganz sicher? 💖";
+    return;
+  }
 
-/* 💖 ZWEITER KLICK – BESTÄTIGUNG */
-confirmYes.addEventListener("click", () => {
-  confirmed = true;
-
-  // 🔊 SOUND STARTET (User-Interaktion!)
+  // 2️⃣ ZWEITER KLICK → ALLES PASSIERT
   heartSound.currentTime = 0;
   heartSound.volume = 1;
   heartSound.play();
 
-  // 🎀 Übergang wie bisher
   questionContainer.style.transition = "opacity 0.6s ease";
   questionContainer.style.opacity = 0;
 
