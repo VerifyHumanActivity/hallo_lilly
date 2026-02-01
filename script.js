@@ -35,7 +35,8 @@ noBtn.addEventListener("touchstart", (e) => {
 yesBtn.addEventListener("click", () => {
 
   if (heartSound){
-    heartSound.play().catch(() => {});
+    heartSound.volume = 1;
+    heartSound.play().catch(err => {console.log("Audio blocked:", err); });
   }
   
   questionContainer.style.opacity = 0;
