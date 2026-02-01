@@ -1,0 +1,44 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #ffe6ec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#questionContainer {
+  position: relative;
+  width: 400px;
+  height: 300px;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+
+.buttons {
+  margin-top: 30px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  position: relative;
+}
+
+#noBtn {
+  position: absolute;
+}
+
+#heartLoader {
+  display: none;
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+#resultContainer {
+  display: none;
+  text-align: center;
+}
