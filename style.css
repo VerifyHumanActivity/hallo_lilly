@@ -28,6 +28,11 @@ body {
   font-size: 30px;
 }
 
+#addtext {
+  margin: 24px 0;
+  font-size: 30px;
+}
+
 /* 🔘 BUTTON CONTAINER */
 .buttons {
   display: flex;
