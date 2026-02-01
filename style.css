@@ -36,11 +36,23 @@ body {
 /* 🔘 BUTTON CONTAINER */
 .buttons {
   display: flex;
-  justify-content: center;   /* Mitte der beiden */
-  gap: 40px;                 /* Abstand zwischen JA / NEIN */
-  margin-top: 30px;
+  justify-content: space-between; /* 🔥 */
+  align-items: center;
+  gap: 120px;
+  width: 100%;
+  max-width: 420px;
+  margin: 30px auto 0;
   position: relative;
 }
+
+#yesBtn {
+  align-self: flex-start;
+}
+
+#noBtn {
+  align-self: flex-end;
+}
+
 
 /* 🔘 Buttons allgemein */
 button {
@@ -69,7 +81,6 @@ button {
 /* 😈 NEIN */
 #noBtn {
   background-color: #ffd1dc;
-  position: absolute;
   right: 0;   /* startet rechts */
 }
 
@@ -124,4 +135,5 @@ button {
   .buttons {
     gap: 120px;
   }
+  
 }
