@@ -14,6 +14,10 @@ body {
   text-align: center;
 }
 
+#noBtn {
+  position: absolute;
+}
+
 #questionGif {
   width: 100px;
   max-width: 80vw;
