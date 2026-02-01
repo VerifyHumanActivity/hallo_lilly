@@ -10,6 +10,7 @@ body {
 
 /* Vorher */
 #questionContainer {
+  position: relative;   /* 🔥 DAS fehlt */
   text-align: center;
 }
 
