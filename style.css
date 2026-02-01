@@ -13,36 +13,42 @@ body {
 #questionContainer {
   position: relative;
   text-align: center;
+  width: 100%;
+  max-width: 420px;
 }
 
-/* 🖼️ GIF vorher */
+/* 🖼️ FRONT GIF (DESKTOP) */
 #questionGif {
-  width: 140px;
-  max-width: 80vw;
+  width: 180px;
 }
 
-/* 📝 Frage */
+/* 📝 FRAGE */
 #questionText {
-  margin-top: 20px;
-  font-size: 26px;
+  margin: 24px 0;
+  font-size: 30px;
+}
+
+/* 🔘 BUTTON CONTAINER */
+.buttons {
+  display: flex;
+  justify-content: center;   /* Mitte der beiden */
+  gap: 40px;                 /* Abstand zwischen JA / NEIN */
+  margin-top: 30px;
+  position: relative;
 }
 
 /* 🔘 Buttons allgemein */
-.buttons {
-  margin-top: 25px;
-}
-
 button {
-  padding: 16px 32px;
-  font-size: 20px;
+  padding: 18px 34px;
+  font-size: 22px;
   border-radius: 14px;
   border: none;
   cursor: pointer;
-  min-width: 150px;
+  min-width: 160px;
   transition: all 0.25s ease;
 }
 
-/* 💖 JA Button */
+/* 💖 JA */
 #yesBtn {
   background-color: #ff7aa2;
   color: white;
@@ -51,35 +57,30 @@ button {
 
 /* ✨ Hover Glow */
 #yesBtn:hover {
-  box-shadow: 0 0 18px rgba(255, 122, 162, 0.9);
+  box-shadow: 0 0 20px rgba(255, 122, 162, 0.9);
   transform: scale(1.08);
 }
 
-/* 😈 NEIN Button */
+/* 😈 NEIN */
 #noBtn {
   background-color: #ffd1dc;
   position: absolute;
+  right: 0;   /* startet rechts */
 }
 
-/* 😈 schrumpft beim Hover */
+/* 😈 schrumpft */
 #noBtn:hover {
   transform: scale(0.75);
 }
 
-/* 💓 Puls-Animation */
+/* 💓 Puls */
 @keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.08);
-  }
-  100% {
-    transform: scale(1);
-  }
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
 }
 
-/* 🎉 Ergebnis-Bereich */
+/* 🎉 Ergebnis */
 #resultContainer {
   display: none;
   text-align: center;
@@ -87,24 +88,35 @@ button {
 
 #resultGif {
   width: 320px;
-  max-width: 90vw;
 }
 
 #resultText {
+  font-size: 30px;
   margin-top: 20px;
-  font-size: 28px;
 }
 
-/* 📱 Mobile Optimierung */
+/* 📱 MOBILE FIXES */
 @media (max-width: 600px) {
+
+  /* 🖼️ GIF 3x größer */
+  #questionGif {
+    width: 360px;
+    max-width: 95vw;
+  }
+
+  /* 🔤 Text größer */
+  #questionText {
+    font-size: 32px;
+  }
+
+  /* 🔘 Buttons größer + mehr Abstand */
   button {
-    padding: 20px 36px;
-    font-size: 22px;
+    font-size: 24px;
+    padding: 22px 38px;
     min-width: 180px;
   }
 
-  #questionText,
-  #resultText {
-    font-size: 24px;
+  .buttons {
+    gap: 60px;
   }
 }
