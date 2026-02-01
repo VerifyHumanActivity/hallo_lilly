@@ -110,36 +110,4 @@ button {
     right: 0 !important;
   }
 
-  /* ❓ Bestätigungs-Box */
-#confirmBox {
-  display: none;
-  margin-top: 20px;
-  padding: 20px;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  animation: popIn 0.4s ease;
-}
-
-#confirmBox p {
-  font-size: 24px;
-  margin-bottom: 16px;
-}
-
-#confirmYes {
-  background: #ff7aa2;
-  color: white;
-  padding: 14px 26px;
-  font-size: 20px;
-  border-radius: 14px;
-  border: none;
-  cursor: pointer;
-}
-
-/* kleine Pop-Animation */
-@keyframes popIn {
-  from { transform: scale(0.8); opacity: 0; }
-  to   { transform: scale(1); opacity: 1; }
-}
-
 }
