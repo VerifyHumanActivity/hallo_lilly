@@ -22,27 +22,24 @@ function moveNoBtn() {
   noBtn.style.top = `${y}px`;
 }
 
-/* 🖱️ Desktop */
-noBtn.addEventListener("mouseover", moveNoBtn);
-
-/* 📱 Mobile */
-noBtn.addEventListener("touchstart", (e) => {
-  e.preventDefault();   // 🔥 verhindert Festhängen
+noBtn.addEventListener("pointerdown", (e) => {
+  e.preventDefault();
   moveNoBtn();
 });
 
 let yesStep = 0;
 
-yesBtn.addEventListener("click", () => {
+yesBtn.addEventListener("pointerdown", (e) => {
+  e.preventDefault();
   yesStep++;
 
-  // 1️⃣ ERSTER KLICK
+  // 1️⃣ erster Tap → Text ändern
   if (yesStep === 1) {
     yesBtn.textContent = "Bist du ganz sicher? 💖";
     return;
   }
 
-  // 2️⃣ ZWEITER KLICK → ALLES PASSIERT
+  // 2️⃣ zweiter Tap → Sound + Ergebnis
   heartSound.currentTime = 0;
   heartSound.volume = 1;
   heartSound.play();
