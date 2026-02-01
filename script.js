@@ -5,10 +5,16 @@ const resultContainer = document.getElementById("resultContainer");
 
 // Nein flieht
 noBtn.addEventListener("mouseover", () => {
-  const x = Math.random() * 200;
-  const y = Math.random() * 200;
-  noBtn.style.transform = `translate(${x}px, ${y}px)`;
+  const container = questionContainer.getBoundingClientRect();
+  const btn = noBtn.getBoundingClientRect();
+
+  const x = Math.random() * (container.width - btn.width);
+  const y = Math.random() * (container.height - btn.height);
+
+  noBtn.style.left = `${x}px`;
+  noBtn.style.top = `${y}px`;
 });
+
 
 // Ja klick
 yesBtn.addEventListener("click", () => {
