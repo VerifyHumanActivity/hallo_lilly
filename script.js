@@ -31,15 +31,28 @@ noBtn.addEventListener("touchstart", (e) => {
   moveNoBtn();
 });
 
-/* 💖 JA klick */
-yesBtn.addEventListener("click", () => {
+const confirmBox = document.getElementById("confirmBox");
+const confirmYes = document.getElementById("confirmYes");
 
-  // 🔊 SOUND STARTET HIER (ERLAUBT!)
+let confirmed = false;
+
+/* 💖 ERSTER KLICK AUF JA */
+yesBtn.addEventListener("click", () => {
+  if (confirmed) return;
+
+  confirmBox.style.display = "block";
+});
+
+/* 💖 ZWEITER KLICK – BESTÄTIGUNG */
+confirmYes.addEventListener("click", () => {
+  confirmed = true;
+
+  // 🔊 SOUND STARTET (User-Interaktion!)
   heartSound.currentTime = 0;
   heartSound.volume = 1;
   heartSound.play();
 
-  // 🎀 sanfter Übergang
+  // 🎀 Übergang wie bisher
   questionContainer.style.transition = "opacity 0.6s ease";
   questionContainer.style.opacity = 0;
 
@@ -55,8 +68,8 @@ yesBtn.addEventListener("click", () => {
     });
 
     resultText.textContent = "💖 Ich wusste es! 💖";
-
   }, 600);
 });
+
 
 });
